@@ -1,0 +1,22 @@
+syntax = 'proto3';
+
+package proto_out;
+option go_package = ".;proto_out";
+
+enum CompanyType {
+  None = 0;
+  Private = 17;
+  Public = 18;
+  NonProfit = 19;
+};
+
+message Company {
+  string Name = 1;
+  repeated Employee Employees = 2;
+  CompanyType Type = 3;
+}
+
+message Employee {
+  string Name = 1;
+  string SSN = 2;
+}
